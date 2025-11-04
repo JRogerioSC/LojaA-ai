@@ -63,7 +63,7 @@ function Pagamento() {
             <h3>{produto.nome}</h3>
             <p>Valor: R$ {Number(produto.preco).toFixed(2)}</p>
             <button onClick={pagar} disabled={carregando}>
-                {carregando ? "Processando..." : "Pagar com Mercado Pago"}
+                {carregando ? "Processando..." : "Pagar"}
             </button>
         </div>
     );
