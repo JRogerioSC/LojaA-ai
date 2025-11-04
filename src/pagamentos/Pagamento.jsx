@@ -20,7 +20,7 @@ function Pagamento() {
         try {
             setCarregando(true);
 
-            const res = await fetch("http://localhost:3001/api/pagamento", {
+            const res = await fetch("https://servidora-ai.onrender.com/api/pagamento", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
