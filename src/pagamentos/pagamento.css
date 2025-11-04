@@ -1,0 +1,37 @@
+.pagamento-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+.pagamento-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pagamento-container h3 {
+    color: #009ee3;
+    font-size: 24px;
+}
+
+.pagamento-container p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+    color: #555;
+}
+
+.pagamento-container button {
+    background-color: #009ee3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagamento-container button:hover {
+    background-color: #007bbd;
+}
