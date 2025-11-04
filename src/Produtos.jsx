@@ -6,9 +6,9 @@ function Produtos() {
     const navigate = useNavigate();
 
     const produtos = [
-        { id: 1, nome: "Camisa Premium", preco: 59.9, imagem: "/camisa.jpg" },
-        { id: 2, nome: "Tênis Conforto", preco: 199.9, imagem: "/tenis.jpg" },
-        { id: 3, nome: "Boné Estiloso", preco: 39.9, imagem: "/bone.jpg" },
+        { id: 1, nome: "Açai 1 Litro", preco: 0.1, imagem: "/camisa.jpg" },
+        { id: 2, nome: "Banda de Frango", preco: 0.01, imagem: "/tenis.jpg" },
+        { id: 3, nome: "Espetinho", preco: 0.01, imagem: "/bone.jpg" },
     ];
 
     const comprar = (produto) => {
@@ -17,7 +17,7 @@ function Produtos() {
 
     return (
         <div className="produtos-container">
-            <h2>Loja React + Checkout Pro</h2>
+            <h2>LojaAçai</h2>
             <div className="lista">
                 {produtos.map((p) => (
                     <div className="card" key={p.id}>
