@@ -6,7 +6,7 @@ function Produtos() {
     const navigate = useNavigate();
 
     const produtos = [
-        { id: 1, nome: "Açai 1 Litro", preco: 0.1, imagem: "/camisa.jpg" },
+        { id: 1, nome: "Açai 1 Litro", preco: 0.01, imagem: "/camisa.jpg" },
         { id: 2, nome: "Banda de Frango", preco: 0.01, imagem: "/tenis.jpg" },
         { id: 3, nome: "Espetinho", preco: 0.01, imagem: "/bone.jpg" },
     ];
