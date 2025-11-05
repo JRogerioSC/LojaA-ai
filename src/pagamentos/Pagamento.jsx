@@ -34,7 +34,7 @@ function Pagamento() {
             try {
                 data = await res.json();
             } catch {
-                console.error("⚠️ O servidor retornou uma resposta vazia ou inválida.");
+                console.error("⚠ O servidor retornou uma resposta vazia ou inválida.");
                 alert("Erro: o servidor não respondeu corretamente.");
                 setCarregando(false);
                 return;
@@ -70,4 +70,3 @@ function Pagamento() {
 }
 
 export default Pagamento;
-

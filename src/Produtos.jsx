@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./produtos.css";
 
 function Produtos() {
     const navigate = useNavigate();
 
-    const produtos = [
-        { id: 1, nome: "Açai 1 Litro", preco: 1.00, imagem: "/acai.jpg" },
-        { id: 2, nome: "Banda de Frango", preco: 1.00, imagem: "/frango.jpg" },
-        { id: 3, nome: "Espetinho", preco: 1.00, imagem: "/espetinho.jpg" },
-    ];
+    // Estado inicial dos produtos
+    const [produtos, setProdutos] = useState([
+        { id: 1, nome: "Açai 1 Litro", preco: 1.0, imagem: "/acai.jpg", estoque: 12 },
+        { id: 2, nome: "Banda de Frango", preco: 1.0, imagem: "/frango.jpg", estoque: 8 },
+        { id: 3, nome: "Espetinho", preco: 1.0, imagem: "/espetinho.jpg", estoque: 20 },
+    ]);
 
     const comprar = (produto) => {
+        // Reduz o estoque do produto comprado
+        setProdutos((produtosAntigos) =>
+            produtosAntigos.map((p) =>
+                p.id === produto.id && p.estoque > 0
+                    ? { ...p, estoque: p.estoque - 1 }
+                    : p
+            )
+        );
+
+        // Redireciona para a página de pagamento
         navigate(`/pagamento?nome=${encodeURIComponent(produto.nome)}&valor=${produto.preco}`);
     };
 
@@ -24,7 +35,16 @@ function Produtos() {
                         <img src={p.imagem} alt={p.nome} />
                         <h3>{p.nome}</h3>
                         <p>R$ {p.preco.toFixed(2)}</p>
-                        <button onClick={() => comprar(p)}>Comprar</button>
+                        <p className="estoque">
+                            Estoque: <strong>{p.estoque}</strong> unidade{p.estoque !== 1 ? "s" : ""}
+                        </p>
+                        <button
+                            onClick={() => comprar(p)}
+                            disabled={p.estoque === 0}
+                            className={p.estoque === 0 ? "btn-desativado" : ""}
+                        >
+                            {p.estoque === 0 ? "Indisponível" : "Comprar"}
+                        </button>
                     </div>
                 ))}
             </div>
