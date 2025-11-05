@@ -6,9 +6,9 @@ function Produtos() {
     const navigate = useNavigate();
 
     const produtos = [
-        { id: 1, nome: "Açai 1 Litro", preco: 1.00, imagem: "/camisa.jpg" },
-        { id: 2, nome: "Banda de Frango", preco: 1.00, imagem: "/tenis.jpg" },
-        { id: 3, nome: "Espetinho", preco: 1.00, imagem: "/bone.jpg" },
+        { id: 1, nome: "Açai 1 Litro", preco: 1.00, imagem: "/acai.jpg" },
+        { id: 2, nome: "Banda de Frango", preco: 1.00, imagem: "/frango.jpg" },
+        { id: 3, nome: "Espetinho", preco: 1.00, imagem: "/espetinho.jpg" },
     ];
 
     const comprar = (produto) => {
