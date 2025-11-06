@@ -122,3 +122,14 @@
 .botoes-form button:hover {
     background-color: #005fd4;
 }
+
+.lembrete-comprovante {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #e53935;
+    background: #fff4f4;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #f5b7b1;
+}

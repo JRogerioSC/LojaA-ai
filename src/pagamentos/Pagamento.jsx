@@ -21,12 +21,10 @@ function Pagamento() {
         setProduto({ nome, preco });
     }, [location.search]);
 
-    // Abre o formulário
     const pagar = () => {
         setMostrarFormulario(true);
     };
 
-    // Função para validar o telefone brasileiro
     const validarTelefone = (telefone) => {
         const apenasNumeros = telefone.replace(/\D/g, "");
         return /^[1-9]{2}9\d{8}$/.test(apenasNumeros); // Ex: 11987654321
@@ -45,7 +43,6 @@ function Pagamento() {
             return;
         }
 
-        // Exibe o resumo do pedido
         const resumo = `
 🧾 CONFIRMAR PEDIDO
 
@@ -62,21 +59,17 @@ Deseja confirmar e enviar para o WhatsApp do vendedor?
         const confirmar = window.confirm(resumo);
         if (!confirmar) return;
 
-        // 📱 Envia o formulário para o WhatsApp do vendedor
         const mensagem = `🛒 NOVO PEDIDO\n\nProduto: ${produto.nome}\nValor: R$ ${Number(
             produto.preco
         ).toFixed(2)}\n\n👤 Cliente: ${nome}\n📞 Telefone: ${telefone}\n🏠 Endereço: ${endereco}`;
 
-        // Substitua pelo número do vendedor (55 + DDD + número)
-        const numeroVendedor = "5596991624580"; // exemplo: 5598999999999
+        const numeroVendedor = "5596991624580";
         const linkWhatsApp = `https://wa.me/${numeroVendedor}?text=${encodeURIComponent(
             mensagem
         )}`;
 
-        // Abre o WhatsApp em nova aba
         window.open(linkWhatsApp, "_blank");
 
-        // Após o envio, segue para o pagamento Mercado Pago
         try {
             setCarregando(true);
 
@@ -153,6 +146,12 @@ Deseja confirmar e enviar para o WhatsApp do vendedor?
                                 Cancelar
                             </button>
                         </div>
+
+                        {/* 🔔 Lembrete no final do formulário */}
+                        <p className="lembrete-comprovante">
+                            ⚠️ Após realizar o pagamento, envie o comprovante ao vendedor via
+                            WhatsApp para confirmar seu pedido.
+                        </p>
                     </div>
                 </div>
             )}
