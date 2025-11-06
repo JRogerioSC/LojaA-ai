@@ -1,14 +1,14 @@
 .produtos-container {
     text-align: center;
     padding: 40px 20px;
-    background-color: #f5f5f5;
+    background-image: url("amazonia-legal-entenda-o-que-e-a-regiao-e-a-importancia-do-territorio.webp");
     min-height: 100vh;
     font-family: "Oswald", sans-serif;
 }
 
 .produtos-container h2 {
     font-size: 28px;
-    color: #333;
+    color: #0a0a0a;
     margin-bottom: 30px;
     font-family: "Oswald", sans-serif;
 }
@@ -22,7 +22,7 @@
 }
 
 .card {
-    background-color: #fff;
+    background-color: #dddce7;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -60,7 +60,7 @@
 
 .card button {
     background-color: #009ee3;
-    color: white;
+    color: rgb(248, 241, 241);
     border: none;
     padding: 10px 16px;
     border-radius: 8px;
