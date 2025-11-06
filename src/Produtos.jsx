@@ -8,7 +8,7 @@ function Produtos() {
     // Estado inicial dos produtos
     const [produtos, setProdutos] = useState([
         { id: 1, nome: "Açai 1 Litro", preco: 1.0, imagem: "/acai.jpg", estoque: 12 },
-        { id: 2, nome: "Banda de Frango", preco: 1.0, imagem: "/frango.jpg", estoque: 8 },
+        { id: 2, nome: "Banda de Frango", preco: 1.0, imagem: "/frango.jpg", estoque: 0 },
         { id: 3, nome: "Espetinho", preco: 1.0, imagem: "/espetinho.jpg", estoque: 20 },
     ]);
 
