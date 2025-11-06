@@ -5,7 +5,6 @@ import "./produtos.css";
 function Produtos() {
     const navigate = useNavigate();
 
-    // Estado inicial dos produtos
     const [produtos, setProdutos] = useState([
         { id: 1, nome: "Açai 1 Litro", preco: 1.0, imagem: "/acai.jpg", estoque: 12 },
         { id: 2, nome: "Banda de Frango", preco: 1.0, imagem: "/frango.jpg", estoque: 0 },
@@ -13,7 +12,6 @@ function Produtos() {
     ]);
 
     const comprar = (produto) => {
-        // Reduz o estoque do produto comprado
         setProdutos((produtosAntigos) =>
             produtosAntigos.map((p) =>
                 p.id === produto.id && p.estoque > 0
@@ -22,7 +20,6 @@ function Produtos() {
             )
         );
 
-        // Redireciona para a página de pagamento
         navigate(`/pagamento?nome=${encodeURIComponent(produto.nome)}&valor=${produto.preco}`);
     };
 
@@ -48,6 +45,13 @@ function Produtos() {
                     </div>
                 ))}
             </div>
+
+            {/* Rodapé estilizado */}
+            <footer className="rodape">
+                <div className="rodape-conteudo">
+                    <p className="direitos">© {new Date().getFullYear()} LojaAçai — Todos os direitos reservados.</p>
+                </div>
+            </footer>
         </div>
     );
 }

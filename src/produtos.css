@@ -1,14 +1,14 @@
 .produtos-container {
     text-align: center;
     padding: 40px 20px;
-    background-image: url("amazonia.jpg");
+    background-color: #0a0a0a;
     min-height: 100vh;
     font-family: "Oswald", sans-serif;
 }
 
 .produtos-container h2 {
     font-size: 28px;
-    color: #0a0a0a;
+    color: #2cbd00;
     margin-bottom: 30px;
     font-family: "Oswald", sans-serif;
 }
@@ -74,9 +74,19 @@
     background-color: #007bbd;
 }
 
-@media (max-width: 600px) {
-    .produtos-container h2 {
-        color: #2cbd00;
-    }
+.rodape {
+    background-color: #0c0c0c;
+    color: #f1e9e9;
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    font-family: "Poppins", sans-serif;
+}
 
+.direitos {
+    font-size: 13px;
+    color: #eee7e7;
+    border-top: 1px solid #dd8282;
+    padding-top: 1px;
+    font-family: "Oswald", sans-serif;
 }
