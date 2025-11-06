@@ -73,3 +73,9 @@
 .card button:hover {
     background-color: #007bbd;
 }
+
+@media (max-width: 600px) {
+  .produtos-container h2 {
+    color: #2cbd00;
+  }
+}
