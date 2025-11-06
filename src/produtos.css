@@ -1,7 +1,7 @@
 .produtos-container {
     text-align: center;
     padding: 40px 20px;
-    background-image: url("amazonia-legal-entenda-o-que-e-a-regiao-e-a-importancia-do-territorio.webp");
+    background-image: url("amazonia.jpg");
     min-height: 100vh;
     font-family: "Oswald", sans-serif;
 }
@@ -75,7 +75,8 @@
 }
 
 @media (max-width: 600px) {
-  .produtos-container h2 {
-    color: #2cbd00;
-  }
+    .produtos-container h2 {
+        color: #2cbd00;
+    }
+
 }
