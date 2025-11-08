@@ -149,7 +149,7 @@ Deseja confirmar e enviar para o WhatsApp do vendedor?
 
                         {/* 🔔 Lembrete no final do formulário */}
                         <p className="lembrete-comprovante">
-                            ⚠️ Após realizar o pagamento, envie o comprovante ao vendedor via
+                            ⚠ Após realizar o pagamento, envie o comprovante ao vendedor via
                             WhatsApp para confirmar seu pedido.
                         </p>
                     </div>
