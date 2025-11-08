@@ -75,7 +75,7 @@
 }
 
 .rodape {
-    background-color: #9e1010;
+    background-color: #0a0a0a;
     color: #eee0e0;
     text-align: center;
     padding: 1px 1px 1px;
@@ -90,4 +90,25 @@
     border-top: 1px solid transparent;
     padding-top: 1px;
     font-family: "Oswald", sans-serif;
+}
+
+.quantidade-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.quantidade-container label {
+    font-weight: 600;
+}
+
+.quantidade-container input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
 }
