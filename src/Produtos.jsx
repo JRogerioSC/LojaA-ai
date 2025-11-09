@@ -12,19 +12,30 @@ function Produtos() {
     ]);
 
     // 🛒 Atualiza a quantidade selecionada
-    const alterarQuantidade = (id, novaQtd) => {
-        setProdutos((antigos) =>
-            antigos.map((p) =>
-                p.id === id
-                    ? { ...p, quantidade: Math.min(Math.max(novaQtd, 1), p.estoque) }
-                    : p
-            )
-        );
+    const alterarQuantidade = (id, novaQtd, estoque) => {
+        // 🔹 Permite digitar livremente, mas mantém mínimo 1 e máximo estoque
+        const numero = Number(novaQtd);
+        if (novaQtd === "") {
+            setProdutos((antigos) =>
+                antigos.map((p) =>
+                    p.id === id ? { ...p, quantidade: "" } : p
+                )
+            );
+        } else if (!isNaN(numero) && numero > 0) {
+            setProdutos((antigos) =>
+                antigos.map((p) =>
+                    p.id === id
+                        ? { ...p, quantidade: Math.min(numero, estoque) }
+                        : p
+                )
+            );
+        }
     };
 
     // 💳 Função de compra
     const comprar = (produto) => {
-        const qtd = produto.quantidade;
+        const qtd = Number(produto.quantidade);
+        if (isNaN(qtd) || qtd <= 0) return alert("Digite uma quantidade válida.");
         if (qtd > produto.estoque) return alert("Quantidade indisponível em estoque.");
 
         setProdutos((antigos) =>
@@ -56,12 +67,11 @@ function Produtos() {
                             <div className="quantidade-container">
                                 <label>Qtd:</label>
                                 <input
-                                    type="number"
-                                    min="1"
-                                    max={p.estoque}
+                                    type="text" // 👈 Agora é texto
+                                    placeholder="Digite"
                                     value={p.quantidade}
                                     onChange={(e) =>
-                                        alterarQuantidade(p.id, parseInt(e.target.value) || 1)
+                                        alterarQuantidade(p.id, e.target.value, p.estoque)
                                     }
                                 />
                             </div>
@@ -90,3 +100,4 @@ function Produtos() {
 }
 
 export default Produtos;
+
